@@ -1,0 +1,64 @@
+#heading{
+    height: 30px;
+    background-color: black;
+    position:fixed;
+    top:0;
+    width:100%;
+    left:0;
+    border-left: 3px;
+    border-right: 3px;
+    
+}
+#heading h3{
+    color:white;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: lighter;
+    padding:5px;
+}
+.example{
+   
+    padding-top:25px;
+   
+}
+
+.navbar-toggler-icon{
+    background-color: black !important;
+    padding:5px;
+}
+.navbar-dark{
+    background-color: white !important;
+} 
+.nav-item{
+    padding-right: 15px;
+    
+}
+.navbar-nav a{
+    color: black !important;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.form-inline{
+    padding-left:20px;
+}
+.form-control{
+    height:30px;
+}
+.btn-default{
+    color:black;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-left:3px;
+}
+.navbar-brand{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:palevioletred !important;
+}
+.bg-light{
+    background-color: white !important;
+    margin-top: 60px;
+    position: absolute;
+    margin-left: 15px;
+}

@@ -3,51 +3,272 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel='stylesheet' type="text/css" href="{% static 'styles/home.css' %}"/>
-    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' %}" crossorigin="anonymous">
-    <script src="{% static 'https://code.jquery.com/jquery-3.4.1.slim.min.js' %}" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' %}" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Women's world</title>
 </head>
 <body>
-    <!--<div class='container'>
-     #   <div id='heading'>
+   <div class='shipping'>
+        <div id='heading'>
            <h3>FREE SHIPPING OVER $50 & FREE RETURNS</h3>
-        </div> -->
-          
+        </div> 
+   </div>
+   <div class='example'>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">Women's World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="collapsibleNavbar">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dresses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Lehangas</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#">Kurthis</a>
+             </li>
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Women's world</a>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Sarees
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Silk</a>
+                <a class="dropdown-item" href="#">Cotton</a>
+                <a class="dropdown-item" href="#">Pattu</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-default" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+               <a class="nav-link" href="#">Signup</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Login</a>
+             </li>
+             
+          </ul>
+          
+       </div>
+      </nav>
+   
+      
+      <div class="container-fluid">
+         <img class="img-thumbnail" src="static/images/b11.jpg" alt='sarees'>
+      </div>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-3 col-md-6 col-lg-3">
+              
+               <a href="./saree.html">
+              <img src="static/images/s1.jpg" style="background-color:azure;height:340px;width:310px;margin:5px;margin-left:13px;" alt="Sarees" class=" img1 img-thumbnail ce">
+              <div class="carousel-caption">
+                <h5 style="color:black;">Sarees</h5>
+              </div>   
+            </a>
+            </div>
+            <div class="col-sm-3 col-md-6 col-lg-3">
+              <a href="./dresses.html">
+               <img src="static/images/d2.jpg" style="background-color:azure;height:340px;width:310px;margin:5px;" alt="Dresses" class="img2 img-thumbnail">
+               <div class="carousel-caption">
+                <h5 style="color:black;">Partywear Dresses</h5>
+              </div>  
+              </a>
+              </div>
+            <div class="col-sm-3 col-md-6 col-lg-3">
+              <a href="./Lehangas.html">
+               <img src="static/images/l2.jpg" style="background-color:azure;height:340px;width:310px;margin:5px;" alt="Lehangas" class="img3 img-thumbnail">
+               <div class="carousel-caption">
+                <h5 style="color:black;">Lehangas</h5>
+              </div> 
+              </a>
+              </div>
+              <div class="col-sm-3 col-md-6 col-lg-3">
+                <a href="./dresses.html">
+                 <img src="static/images/d4.jpg" style="background-color:azure;height:340px;width:310px;margin:5px;" alt="Lehangas" class="img3 img-thumbnail">
+                 <div class="carousel-caption">
+                  <h5 style="color:black;">Dresses</h5>
+                </div> 
+                </a>
+              </div>
+              
+         </div>
+      </div>
+      <footer class="page-footer font-small unique-color-dark">
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <div style="background-color: #6351ce;height:50px;">
+          <div class="container">
+      
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+      
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                <h6 class="mb-0" style="margin-top: -20px;">Get connected with us on social networks!</h6>
+              </div>
+              <!-- Grid column -->
+      
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-7 text-center text-md-right"  style="margin-top: -10px;">
+      
+                <!-- Facebook -->
+                <a class="fb-ic">
+                  <i class="fa fa-facebook-square white-text mr-4"></i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic">
+                  <i class="fa fa-twitter-square white-text mr-4"></i>
+                </a>
+                <!-- Google +-->
+                <a class="github-ic">
+                  <i class="fa fa-github white-text mr-4"></i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic">
+                  <i class="fa fa-linkedin-square white-text mr-4"></i>
+                </a>
+                <!--Instagram-->
                 
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">SAREE</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">SALWAR KAMEEZ</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">KURTIS</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">LEHENGAS</a>
-                </li>
-            </ul>
-           <form class="form-inline my-2 my-lg-0">
-           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-           </form>
+      
+              </div>
+              <!-- Grid column -->
+      
+            </div>
+            <!-- Grid row-->
+      
+          </div>
         </div>
-       </nav>
-</div>  
+      
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+      
+          <!-- Grid row -->
+          <div class="row mt-3">
+      
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+      
+              <!-- Content -->
+              <h6 class="text-uppercase font-weight-bold">Women's world</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>This site is developed by using Bootstrap,css,Javascript,Python and django.</p>
+      
+            </div>
+            <!-- Grid column -->
+      
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+      
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Products</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a href="#!">Indian Wear</a>
+              </p>
+              <p>
+                <a href="#!">Sarees</a>
+              </p>
+              <p>
+                <a href="#!">Dresses</a>
+              </p>
+              <p>
+                <a href="#!">Lehangas</a>
+              </p>
+      
+            </div>
+            <!-- Grid column -->
+      
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+      
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a href="#!">Your Account</a>
+              </p>
+              <p>
+                <a href="#!">Become an Affiliate</a>
+              </p>
+              <p>
+                <a href="#!">Shipping Rates</a>
+              </p>
+              <p>
+                <a href="#!">Help</a>
+              </p>
+      
+            </div>
+            <!-- Grid column -->
+      
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+      
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold">Contact</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+              <p>
+                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+              <p>
+                <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+      
+            </div>
+            <!-- Grid column -->
+      
+          </div>
+          <!-- Grid row -->
+      
+        </div>
+        <!-- Footer Links -->
+      
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="https://mdbootstrap.com/"> learningcode9@gmail.com</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>
+      <!-- Footer -->
+        
+   
+      
+      
+      
+      
+  
+        
+         
+   
 
-    
+        
+      
+      
+      
+      
+         
+                
+               
+      
+
+      
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
