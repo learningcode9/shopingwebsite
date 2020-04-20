@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>Sign up for an account</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;margin-top:30px;">
+        <h3>SignUp</h3>
+        <form method="POST">
+          {%csrf_token%}
+          {{form.as_p}}
+        <input type="submit" class="btn btn-lg btn-warning" value="Signup">
+</form>
+</body>
+</html>

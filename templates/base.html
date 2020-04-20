@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">-->
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">-->
     <link rel='stylesheet' type="text/css" href="{% static 'styles/base.css' %}"/>
     if login.html
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
     if Lehangas.html
     <link rel="stylesheet" href="{% static 'styles/lehangas.css' %}">
+    if dresses.html 
+    <link rel="style sheet" href="{%static 'styles/dresses.css' %}">
+    if saree.html
+    <link rel="style sheet" href="{%static 'styles/sarees.css' %}">
     <title>Women's world</title>
 </head>
 <body>
@@ -24,21 +28,19 @@
    <div class='example'>
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="home.html">Women's World</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Women's World</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
          <span class="navbar-toggler-icon"></span>
        </button>
        <div class="collapse navbar-collapse" id="collapsibleNavbar">
          <ul class="myUl navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="dresses.html">Dresses</a>
+              <a class="nav-link" href="{% url 'dresses' %}">Dresses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Lehangas.html">Lehangas</a>
+              <a class="nav-link" href="{% url 'Lehangas' %}">Lehangas</a>
             </li>
-            <li class="nav-item">
-               <a class="nav-link" href="Sarees.html">Sarees</a>
-             </li>
+            
         
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -46,9 +48,9 @@
                 Sarees
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="Sarees.html">Silk</a>
-                <a class="dropdown-item" href="Sarees.html">Cotton</a>
-                <a class="dropdown-item" href="Sarees.html">Pattu</a>
+                <a class="dropdown-item" href="{% url 'sarees' %}">Silk</a>
+                <a class="dropdown-item" href="{% url 'sarees' %}">Cotton</a>
+                <a class="dropdown-item" href="{% url 'sarees' %}">Pattu</a>
               </div>
             </li>
           </ul>
@@ -57,14 +59,22 @@
             <button onClick=validation() class="btn btn-default" type="submit">Search</button>
           </form>
           <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated%}
+            <li style="margin-top: 6px;font:bold;">Hello {{user.username}}</li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
             <li class="nav-item">
                <a class="nav-link" href="#">Signup</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="#">Login</a>
+               <a class="nav-link" href="{% url 'login' %}">Login</a>
              </li>
+             {% endif %}
+            
              <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>&nbsp;Cart</a>
+              <a class="nav-link" href="{% url 'checkout' %}"><i class="fa fa-shopping-cart"></i>&nbsp;Cart</a>
             </li>
           </ul>
           
@@ -75,13 +85,13 @@
         <ul class="navbar-nav">
             <p>Explore more</p>
           <li class="nav-item">
-            <a class="nav-link" href="#">Dresses</a>
+            <a class="nav-link" href="{% url 'dresses' %}">Dresses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sarees</a>
+            <a class="nav-link" href="{% url 'sarees' %}">Sarees</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Lehangas</a>
+            <a class="nav-link" href="{% url 'Lehangas' %}">Lehangas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact Us</a>
@@ -89,7 +99,7 @@
           <li class="nav-item">
           <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
             <a href="#">
-                <img  alt="AltText" src="static/images/s4.jpg" style="height:160px;width:130px;background-color:azure;margin-top:30px;" class="border border-light img-responsive">
+                <img  alt="AltText" src="{%static "images/s1.jpg" %}" style="height:160px;width:130px;background-color:azure;margin-top:30px;" class="border border-light img-responsive">
                 <figcaption style="color:red;margin-left:50px;">$90</figcaption>
               </a>
           </div>
@@ -98,7 +108,7 @@
             
             <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
               <a href="#">
-                  <img  alt="AltText" src="static/images/d4.jpg" style="height:160px;width:130px;background-color:azure;margin-top:30px;" class="border border-light img-responsive">
+                  <img  alt="AltText" src="{% static "images/d4.jpg" %}" style="height:160px;width:130px;background-color:azure;margin-top:30px;" class="border border-light img-responsive">
                   <figcaption style="color:red;margin-left:50px;">$40</figcaption>
                 </a>
               
@@ -108,7 +118,7 @@
           <li class="nav-item">
             <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
               <a href="#">
-                  <img  alt="AltText" src="static/images/s5.jpg" style="height:160px;width:130px;background-color:azure;margin-top:30px;" class="border border-light img-responsive">
+                  <img  alt="AltText" src="{% static "images/s5.jpg" %}"" style="height:160px;width:130px;background-color:azure;margin-top:30px;" class="border border-light img-responsive">
                   <figcaption style="color:red;margin-left:50px;">$80</figcaption>
                 </a>
               
@@ -127,32 +137,32 @@
     <div class="row">
       <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
           <a href="#">
-              <img  alt="AltText" src="static/images/s4.jpg" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
+              <img  alt="AltText" src="{%static "images/s4.jpg" %}" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
           </a>
       </div>
       <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
           <a href="#">
-              <img  alt="AltText" src="static/images/d3.jpg" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
+              <img  alt="AltText" src="{%static "images/d3.jpg" %}" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
           </a>
       </div>
       <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
           <a href="#">
-              <img  alt="AltText" src="static/images/s7.jpg" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
+              <img  alt="AltText" src="{% static "images/s7.jpg" %}" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
           </a>
       </div>
       <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
           <a href="#">
-              <img  alt="AltText" src="static/images/d5.jpg" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
+              <img  alt="AltText" src="{%static "images/d5.jpg" %}" style="height: 190px;width:150px;background-color:azure" class="border border-light img-responsive">
           </a>
       </div>
       <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
           <a href="#">
-              <img  alt="AltText" src="static/images/s6.jpg" style="height:190px;width:150px;background-color:azure" class="rounded border border-light img-responsive">
+              <img  alt="AltText" src="{%static "images/s6.jpg" %}" style="height:190px;width:150px;background-color:azure" class="rounded border border-light img-responsive">
           </a>
       </div>
       <div class="col-sm-3 col-md-6 col-lg-2 mt-md-2">
           <a href="#">
-              <img  alt="AltText" src="static/images/d9.jpg" style="height:190px;width:150px;background-color:azure;" class="rounded border border-light  img-responsive">
+              <img  alt="AltText" src="{%static "images/d9.jpg" %}" style="height:190px;width:150px;background-color:azure;" class="rounded border border-light  img-responsive">
           </a>
       </div>
   </div>
@@ -272,7 +282,7 @@
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+          <i class="fas fa-home mr-3"></i> San Francisco, CA 10012, US</p>
         <p>
           <i class="fas fa-envelope mr-3"></i> info@example.com</p>
         <p>

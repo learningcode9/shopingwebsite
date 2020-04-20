@@ -8,20 +8,33 @@
 <div class="space">
 <div class="container">
     <div class="row">
-       <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
-        <div class="card">
-         <img src="static/images/l1.jpg" style="background-color:azure" alt="Sarees" class="img-thumbnail ce">
-         <div class="card-body">
-            <h6 class="card-title" style="color:brown;font-size:12px;">Heavy work light and orange color</h6>
-            <p class="card-text" style="color:rgb(0, 174, 255)">$180</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
+      {% for lehangas in lehangas %}
+         <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
+          <div class="card">
+            <form method="POST" action="checkout.html">
+           <img src={{lehangas.img.url}} style="background-color:azure" alt="Sarees" class="img-thumbnail ce">
+           <div class="card-body">
+              <h6 class="card-title" style="color:brown">{{lehangas.desc}}</h6>
+              <p class="card-text" style="color:rgb(0, 174, 255)">${{lehangas.price}}</p>
+              <select class="custom-select">
+                <option selected>select quantity</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              
+              <a href="" style="margin-top:20px" class="btn btn-primary">Add to cart</a>
+            </form>
+            </div>
           </div>
-        </div>
-       </div>
+         </div>
+      {% endfor %}
     
-       <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
+     <!----  <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
         <div class="card">
-         <img src="static/images/l2.jpg" style="background-color:azure" alt="Dresses" class="img-thumbnail">
+         <img src="{%static "images/l2.jpg" %}" style="background-color:azure" alt="Dresses" class="img-thumbnail">
          <div class="card-body">
             <h6 class="card-title" style="color:brown;font-size:12px;">Heavy work Red lehanga</h6>
             <p class="card-text" style="color:rgb(0, 174, 255)">$160</p>
@@ -32,7 +45,7 @@
 
        <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
         <div class="card">
-         <img src="static/images/l3.jpg" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
+         <img src="{%static "images/l3.jpg" %}" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
          <div class="card-body">
             <h6 class="card-title" style="color:brown;font-size:12px;">Simple blue and cream color</h6>
             <p class="card-text" style="color:rgb(0, 174, 255)">$100</p>
@@ -42,7 +55,7 @@
        </div>
         <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
             <div class="card">
-            <img src="static/images/l4.jpg" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
+            <img src="{%static "images/l4.jpg" %}" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
             <div class="card-body">
                 <h6 class="card-title" style="color:brown;font-size:12px;">Simple red and black </h6>
                 <p class="card-text" style="color:rgb(0, 174, 255)">$90</p>
@@ -55,7 +68,7 @@
     <div class="row">
         <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
             <div class="card">
-          <img src="static/images/l4.jpg" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
+          <img src="{%static "images/l4.jpg" %}" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
           <div class="card-body">
             <h6 class="card-title" style="color:brown;font-size:12px;">Simple red and black Red lehanga</h6>
             <p class="card-text" style="color:rgb(0, 174, 255)">$90</p>
@@ -66,7 +79,7 @@
 
          <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
             <div class="card">
-          <img src="static/images/l3.jpg" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
+          <img src="{%static "images/l3.jpg" %}" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
           <div class="card-body">
             <h6 class="card-title" style="color:brown;font-size:12px;">Simple blue and cream color</h6>
             <p class="card-text" style="color:rgb(0, 174, 255)">$100</p>
@@ -76,7 +89,7 @@
          </div>
          <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
             <div class="card">
-            <img src="static/images/l2.jpg" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
+            <img src="{%static "images/l2.jpg" %}" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
             <div class="card-body">
             <h6 class="card-title" style="color:brown;font-size:12px;">Heavy work Red lehanga</h6>
             <p class="card-text" style="color:rgb(0, 174, 255)">$160</p>
@@ -86,7 +99,7 @@
          </div>
          <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
             <div class="card">
-            <img src="static/images/l1.jpg" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
+            <img src="{% static "images/l1.jpg" %}" style="background-color:azure" alt="Lehangas" class="img-thumbnail">
            
             <div class="card-body">
                 <h6 class="card-title" style="color:brown;font-size:12px;">Heavy work light and orange color<</h6>
@@ -94,7 +107,7 @@
                 <a href="#" class="btn btn-primary">Add to cart</a>
               </div>
             </div>
-    </div>
+    </div>-->
     </div>
 </div>
 </div>

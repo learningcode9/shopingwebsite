@@ -5,7 +5,9 @@
     margin-top:10px;
     height:400px;
     overflow: hidden;
-    
+}
+.nav-item li a{
+    color:white !important;
 }
 
 
