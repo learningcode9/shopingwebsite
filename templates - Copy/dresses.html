@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'styles/dresses.css' %}">
+{% endblock %}
+{% block content %}
+<div class="space">
+  <div class="container">
+      <div class="row">
+        {% for dresses in dresses %}
+         <div class="col-sm-3 col-md-6 col-lg-3 mt-md-2">
+          <div class="card">
+            <form method="POST" action="checkout.html">
+           <img src={{dresses.img.url}} style="background-color:azure" alt="Sarees" class="img-thumbnail ce">
+           <div class="card-body">
+              <h6 class="card-title" style="color:brown;font-size:12px;">{{dresses.desc}}</h6>
+              <p class="card-text" style="color:rgb(0, 174, 255)">${{dresses.price}}</p>
+              <select class="custom-select">
+                <option selected >select quantity</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <a href="#"style="margin-top:20px" class="btn btn-primary">Add to cart</a>
+              </form>
+            </div>
+          </div>
+         </div>
+         {% endfor %}
+      
+           
+      </div>
+      </div>
+  </div>
+  </div>
+  <hr/>
+      
+
+{% endblock content %}
